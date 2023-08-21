@@ -1,22 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./timerStyle.css";
+import useTimer from "../../hooks/useTimer";
+import { digitConvert } from "/home/diego/Documents/Git Repository/React/Simple-Counter/src/js/functions/functions.js";
 const SecondsCounter = () => {
+  const { seconds, arrayDigits } = useTimer();
+
   return (
     <div className="container">
       <h1 className="set-timer">
-        <i class="fa-solid fa-clock"></i>
+        <i className="fa-solid fa-clock"></i>
       </h1>
       <h1 className="stop-resume">
-        <i class="fa-solid fa-stopwatch"></i>
+        <i className="fa-solid fa-stopwatch"></i>
       </h1>
       <h1 className="reset">
-        <i class="fa-solid fa-xmark test"></i>
+        <i className="fa-solid fa-xmark test"></i>
       </h1>
-      <h1 className="digit">0</h1>
-      <h1 className="digit">0</h1>
-      <h1 className="digit">0</h1>
-      <h1 className="digit">0</h1>
-      <h1 className="digit">0</h1>
+      {arrayDigits.map((digit, item) => {
+        return (
+          <h1 key={item} className="digit">
+            {digit}
+          </h1>
+        );
+      })}
     </div>
   );
 };
