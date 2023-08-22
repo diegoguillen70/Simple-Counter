@@ -20,8 +20,11 @@
 .digit {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
+  display: flex;
   text-align: center;
-  height: 70%;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
   width: 10%;
   border-color: rgb(102, 102, 102);
   border-style: solid;
@@ -40,11 +43,14 @@
   border-style: solid;
   border-radius: 5%;
   font-family: "Anton", sans-serif;
-  padding: 2.2%;
   font-size: 3rem;
-  width: 12%;
-  height: 70%;
+  width: 80px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.colon {
+  color: white;
 }

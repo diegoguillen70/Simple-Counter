@@ -17,5 +17,5 @@ export default function useTimer() {
     //console.log(arrayDigits);
     return () => clearInterval(timeInterval);
   }, [seconds]);
-  return { seconds, arrayDigits };
+  return { seconds };
 }
