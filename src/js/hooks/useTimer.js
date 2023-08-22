@@ -21,5 +21,9 @@ export default function useTimer() {
     setIsActive(!isActive);
     console.log(isActive);
   }
-  return { seconds, stopResume };
+
+  function resect() {
+    setSeconds(0);
+  }
+  return { seconds, stopResume, resect };
 }
