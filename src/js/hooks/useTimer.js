@@ -10,12 +10,16 @@ export default function useTimer() {
       timeInterval = setInterval(() => {
         setSeconds(seconds + 1);
       }, 1000);
-    } else if (!isActive && seconds !== 0) {
+    } /* else if (!isActive && seconds !== 0) {
       clearInterval(0);
-    }
+    }*/
     setArrayDigits(Array.from(String(seconds), Number));
     //console.log(arrayDigits);
     return () => clearInterval(timeInterval);
-  }, [seconds]);
-  return { seconds };
+  }, [seconds, isActive]);
+  function stopResume() {
+    setIsActive(!isActive);
+    console.log(isActive);
+  }
+  return { seconds, stopResume };
 }

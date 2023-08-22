@@ -3,7 +3,7 @@ import "./timerStyle.css";
 import useTimer from "../../hooks/useTimer";
 import { digitConvert } from "/home/diego/Documents/Git Repository/React/Simple-Counter/src/js/functions/functions.js";
 const SecondsCounter = () => {
-  const { seconds } = useTimer();
+  const { seconds, stopResume } = useTimer();
   //const objectDigits = digitConvert(seconds);
   //const arrayDigits = Object.values(objectDigits);
   let arrayDigits = []; //= digitConvert(seconds);
@@ -12,6 +12,7 @@ const SecondsCounter = () => {
     for (const key in element) {
       arrayDigits.push(element[key]);
     }
+
     //console.log(arrayDigits);
   });
   return (
@@ -23,11 +24,11 @@ const SecondsCounter = () => {
         <i className="fa-solid fa-stopwatch"></i>
       </h1>
       <h1 className="reset">
-        <i className="fa-solid fa-xmark test"></i>
+        <i className="fa-solid fa-xmark " onClick={() => stopResume()}></i>
       </h1>
 
       {arrayDigits.map((digits, index) => {
-        console.log(index);
+        //console.log(index);
         if (index == 0 || index == 2) {
           return (
             <>

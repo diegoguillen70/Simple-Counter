@@ -19,6 +19,7 @@
   border-style: solid;
   border-radius: 5px;
   aspect-ratio: 15/3;
-  align-self: center;
+  align-content: center;
   background-color: black;
+  display: flex;
 }
